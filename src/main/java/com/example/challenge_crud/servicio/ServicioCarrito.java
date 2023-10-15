@@ -1,12 +1,12 @@
 package com.example.challenge_crud.servicio;
 
 import com.example.challenge_crud.modelo.Carrito;
-
 import com.example.challenge_crud.repositorio.RepositorioCarrito;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Service
 public class ServicioCarrito {
  private final RepositorioCarrito repositorioCarrito;
 
