@@ -18,7 +18,7 @@ public class Carrito {
     private CarritoId id;
 
     @ManyToOne // Relación many-to-one con Usuario
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "id_usuario", insertable = false, updatable = false)
     private Usuario usuario;
     // Otros campos y relaciones
 }
