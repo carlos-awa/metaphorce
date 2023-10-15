@@ -1,9 +1,10 @@
 package com.example.challenge_crud.modelo;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.io.Serializable;
 
 @Entity // Esta anotación indica que esta clase es una entidad JPA y debe ser mapeada a una tabla en la base de datos.
 @Table // Esta anotación se utiliza para personalizar la configuración de la tabla en la base de datos.
@@ -12,10 +13,13 @@ import lombok.Setter;
 @Getter // Lombok: Genera automáticamente el método getter.
 @Setter // Lombok: Genera automáticamente el método setter.
 
-public class Categoria {
-    @Id // Esta anotación marca el campo como clave primaria.
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Se utiliza para generar automáticamente valores de clave primaria (autoincremental).
-    private long id_categoria; // Campo de clave primaria.
-    private String categoria; // Otro campo de la entidad.
+public class Carrito {
+    @EmbeddedId
+    private CarritoId id;
 
+    @ManyToOne // Relación many-to-one con Usuario
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+    // Otros campos y relaciones
 }
+
