@@ -18,4 +18,12 @@ public class ServicioCarrito {
     public List<Carrito> MostrarCarrito(){
      return repositorioCarrito.findAll();
  }
+
+    public Carrito agregarCarrito(Carrito carrito) {
+        return repositorioCarrito.save(carrito);
+    }
+
+    public void borrarCarritoPorId(Long id) {
+        repositorioCarrito.deleteById(id);
+    }
 }
