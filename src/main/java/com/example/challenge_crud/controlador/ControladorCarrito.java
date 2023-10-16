@@ -1,28 +1,25 @@
 package com.example.challenge_crud.controlador;
-
-
 import com.example.challenge_crud.modelo.Carrito;
+
 import com.example.challenge_crud.servicio.ServicioCarrito;
-import com.example.challenge_crud.servicio.ServicioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-@RestController
-@RequestMapping(path = "api/v1/mostrarCarrito")
-public class ControladorCarrito {
 
-private final ServicioCarrito servicioCarrito;
-    @Autowired
+@RestController
+@RequestMapping("api/v1/carritos")
+
+public class ControladorCarrito {
+    private final ServicioCarrito servicioCarrito;
+@Autowired
     public ControladorCarrito(ServicioCarrito servicioCarrito) {
         this.servicioCarrito = servicioCarrito;
     }
-
-
-@GetMapping(path = "/mostrarCarrito")
-public List<Carrito> MostrarCarrito(){
-    return this.servicioCarrito.MostrarCarrito();
-}
+    @GetMapping(path = "/mostrarCarrito")
+    public List<Carrito> MostrarCarrito() {
+        return servicioCarrito.MostrarCarrito();
+    }
 }
