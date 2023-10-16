@@ -1,5 +1,6 @@
 package com.example.challenge_crud.servicio;
 
+
 import com.example.challenge_crud.modelo.Usuario;
 import com.example.challenge_crud.repositorio.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,4 +20,13 @@ public class ServicioUsuario {
     public List<Usuario> MostrarUsuarios(){
         return this.repositorioUsuario.findAll();
     }
+
+    public Usuario agregarUsuario(Usuario usuario) {
+        return repositorioUsuario.save(usuario);
+    }
+
+    public void borrarUsuarioPorId(Long id) {
+        repositorioUsuario.deleteById(id);
+    }
+
 }

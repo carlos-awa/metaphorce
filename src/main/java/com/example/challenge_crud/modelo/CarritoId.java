@@ -1,12 +1,14 @@
 package com.example.challenge_crud.modelo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
-import java.io.Serializable;
-
 @Embeddable
-public class CarritoId implements Serializable {
-    private Long idcarrito;
-    private Long id_usuario;
+public class CarritoId{
+    @Column(name = "id_usuario")
+    private long idusuario;
+
+    @Column(name = "idcarrito")
+    private long idcarrito;
 
 }
