@@ -26,7 +26,10 @@ public class ServicioUsuario {
     }
 
     public void borrarUsuarioPorId(Long id) {
-        repositorioUsuario.deleteById(id);
+        this.repositorioUsuario.deleteById(id);
     }
 
+    public Usuario ActualizarUsuario(Usuario usuario) {
+        return repositorioUsuario.save(usuario);
+    }
 }
