@@ -17,4 +17,16 @@ public class ServicioCategoria {
     public List<Categoria> MostrarCategoria(){
         return this.repositorioCategoria.findAll();
     }
+
+    public Categoria InsertarCategoria(Categoria categoria) {
+        return this.repositorioCategoria.save(categoria);
+    }
+
+    public Categoria ActualizarCategoria(Categoria categoria) {
+        return this.repositorioCategoria.save(categoria);
+    }
+
+    public void BorrarCategoria(Long id_categoria) {
+        this.repositorioCategoria.deleteById(id_categoria);
+    }
 }
