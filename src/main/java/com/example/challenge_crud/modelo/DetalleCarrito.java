@@ -26,4 +26,5 @@ public class DetalleCarrito {
     @ManyToOne(targetEntity = Carrito.class)
     @JoinColumn(name = "id_carrito")
     private Carrito carrito;
+
 }
