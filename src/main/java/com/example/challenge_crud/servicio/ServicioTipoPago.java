@@ -14,4 +14,15 @@ public class ServicioTipoPago {
      public  ServicioTipoPago(RepositorioTipoPago repositorioTipoPago){ this.repositorioTipoPago = repositorioTipoPago;}
     public List<Tipo_pago> mostrarTipoPago(){return this.repositorioTipoPago.findAll();}
 
+    public Tipo_pago NuevoTipoPago(Tipo_pago tipo_Pago) {
+        return this.repositorioTipoPago.save(tipo_Pago);
+    }
+
+    public Tipo_pago ActualizarTipoPago(Tipo_pago tipoPago) {
+        return this.repositorioTipoPago.save(tipoPago);
+    }
+
+    public void BorrarTipoPago(Long idTipoPago) {
+        this.repositorioTipoPago.deleteById(idTipoPago);
+    }
 }

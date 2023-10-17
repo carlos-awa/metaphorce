@@ -18,7 +18,6 @@ public class ControladorTransaccion {
     @Autowired
     public ControladorTransaccion(ServicioTransaccion servicioTransaccion){this.servicioTransaccion = servicioTransaccion;}
 
-
     @GetMapping(path = "/mostrarTransaccion")
     public List<Transaccion> MostrarTransaccion(){ return this.servicioTransaccion.mostrarTransaccion();}
 }

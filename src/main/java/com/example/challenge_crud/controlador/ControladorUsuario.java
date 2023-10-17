@@ -29,7 +29,7 @@ public class ControladorUsuario {
 
     @DeleteMapping(path= "/borrarUsuario/{id_usuario}")
     public void borrarUsuario(@PathVariable Long id_usuario) {
-        this.servicioUsuario.borrarUsuarioPorId(id_usuario);
+        this.servicioUsuario.borrarUsuarioPorId(id_usuario  );
     }
 
     @PutMapping(path = "/actualizarUsuario/{id_usuario}")
