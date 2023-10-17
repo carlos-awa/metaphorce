@@ -13,6 +13,4 @@ public class ServicioTransaccion {
     @Autowired
     public  ServicioTransaccion(RepositorioTransaccion repositorioTransaccion){ this.repositorioTransaccion = repositorioTransaccion;}
       public List<Transaccion> mostrarTransaccion(){return this.repositorioTransaccion.findAll();}
-
-
 }

@@ -15,5 +15,14 @@ public class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_Transaccion;
-    private String Transaccion;
+    private String titular;
+    private float monto;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private DetalleCarrito detalleCarrito;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_pago")
+    private Tipo_pago tipoPago;
 }
