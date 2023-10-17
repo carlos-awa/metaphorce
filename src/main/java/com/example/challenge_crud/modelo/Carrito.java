@@ -7,19 +7,18 @@ import lombok.Setter;
 
 
 @Entity
+@Table
+
 @Data
 @Setter
 @Getter
-@Table(name = "carrito")
-
 public class Carrito {
-@EmbeddedId
-    private CarritoId id;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id_carrito;
 
     @ManyToOne
-    @MapsId("idusuario")
-    @JoinColumn(name = "idusuario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_usuario", insertable = false, updatable = false)
     private Usuario usuario;
     // Otros campos y relaciones
 
