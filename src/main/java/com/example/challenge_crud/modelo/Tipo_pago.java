@@ -14,6 +14,6 @@ import lombok.Setter;
 public class Tipo_pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_Tipo_pago;
-    private String Tipo_pago;
+    private long id_tipo_pago;
+    private String tipo_pago;
 }
