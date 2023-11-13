@@ -1,44 +1,54 @@
 package com.example.challenge_crud.security;
 
+import com.example.challenge_crud.modelo.Usuario;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 
+@AllArgsConstructor
 public class UserDetailsImpl implements UserDetails {
+
+    private final Usuario usuario;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return Collections.emptyList();
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return usuario.getNombre();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return usuario.getNombre();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
+    }
+
+    public String getNombre(){
+        return usuario.getNombre();
     }
 }

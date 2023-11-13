@@ -17,7 +17,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
                 findOneByEmail(email)
                 .orElseThrow(()-> new UsernameNotFoundException("El usuario con email" + email + "no existe"));
 
-return
+return new UserDetailsImpl(usuario);
     }
 
     @Autowired
