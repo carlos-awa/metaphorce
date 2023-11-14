@@ -1,6 +1,7 @@
 package com.example.challenge_crud.servicio;
 
 import com.example.challenge_crud.modelo.Carrito;
+import com.example.challenge_crud.modelo.Categoria;
 import com.example.challenge_crud.repositorio.RepositorioCarrito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,4 +27,9 @@ public class ServicioCarrito {
     public void borrarCarritoPorId(Long id) {
         repositorioCarrito.deleteById(id);
     }
+
+    public Carrito ActualizarCarrito(Carrito carrito) {
+        return this.repositorioCarrito.save(carrito);
+    }
+
 }

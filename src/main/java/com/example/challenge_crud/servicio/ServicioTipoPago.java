@@ -25,4 +25,5 @@ public class ServicioTipoPago {
     public void BorrarTipoPago(Long idTipoPago) {
         this.repositorioTipoPago.deleteById(idTipoPago);
     }
+
 }
