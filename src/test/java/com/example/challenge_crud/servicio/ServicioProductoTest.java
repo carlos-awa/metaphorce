@@ -44,19 +44,19 @@ class ServicioProductoTest {
     }
 
     @Test
-    void agregarUsuario() {
+    void agregarProducto() {
         when(repositorioProducto.save(any(Producto.class))).thenReturn(producto);
         assertNotNull(servicioProducto.agregarProducto(new Producto()));
     }
 
     @Test
-    void borrarUsuarioPorId() {
+    void borrarProductoPorId() {
         doNothing().when(repositorioProducto).deleteById(anyLong());
         servicioProducto.borrarProductoPorId(1L);
     }
 
     @Test
-    void actualizarUsuario() {
+    void actualizarProducto() {
         when(repositorioProducto.save(any(Producto.class))).thenReturn(producto);
         assertNotNull(servicioProducto.agregarProducto(new Producto()));
     }
