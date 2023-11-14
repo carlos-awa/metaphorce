@@ -23,7 +23,7 @@ public class ServicioProducto {
         return repositorioProducto.save(producto);
     }
 
-    public void borrarUsuarioPorId(Long id) {
+    public void borrarProductoPorId(Long id) {
         this.repositorioProducto.deleteById(id);
     }
 
