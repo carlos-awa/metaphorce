@@ -16,5 +16,5 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_usuario;
     private String nombre;
-
+    private String email;
 }
