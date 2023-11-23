@@ -17,4 +17,5 @@ public class Usuario {
     private long id_usuario;
     private String nombre;
     private String email;
+    private String passwords;
 }
