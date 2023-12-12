@@ -1,6 +1,7 @@
 package com.example.supercitox.servicio;
 
-import com.example.supercitox.modelo.Tipo_pago;
+
+import com.example.supercitox.modelo.Tipo_Pago;
 import com.example.supercitox.repositorio.RepositorioTipoPago;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,11 +24,11 @@ class ServicioTipoPagoTest {
     @InjectMocks
     private ServicioTipoPago servicioTipoPago;
 
-    private Tipo_pago tipoPago;
+    private Tipo_Pago tipoPago;
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        tipoPago = new Tipo_pago();
+        tipoPago = new Tipo_Pago();
         tipoPago.setId_tipo_pago(55);
         tipoPago.setTipo_pago("Prueba");
     }
@@ -35,24 +36,24 @@ class ServicioTipoPagoTest {
     @Test
     void mostrarTipoPago() {
         when(repositorioTipoPago.findAll()).thenReturn(Arrays.asList(tipoPago));
-        assertNotNull(servicioTipoPago.mostrarTipoPago());
+        assertNotNull(servicioTipoPago.mostrarTipoPagos());
     }
 
     @Test
     void nuevoTipoPago() {
-        when(repositorioTipoPago.save(any(Tipo_pago.class))).thenReturn(tipoPago);
-        assertNotNull(servicioTipoPago.NuevoTipoPago(new Tipo_pago()));
+        when(repositorioTipoPago.save(any(Tipo_Pago.class))).thenReturn(tipoPago);
+        assertNotNull(servicioTipoPago.agregarTipoPago(new Tipo_Pago()));
     }
 
     @Test
     void actualizarTipoPago() {
-        when(repositorioTipoPago.save(any(Tipo_pago.class))).thenReturn(tipoPago);
-        assertNotNull(servicioTipoPago.ActualizarTipoPago(new Tipo_pago()));
+        when(repositorioTipoPago.save(any(Tipo_Pago.class))).thenReturn(tipoPago);
+        assertNotNull(servicioTipoPago.actualizarTipoPago(new Tipo_Pago()));
     }
 
     @Test
     void borrarTipoPago() {
         doNothing().when(repositorioTipoPago).deleteById(anyLong());// Llamar al método que estás probando
-        servicioTipoPago.BorrarTipoPago(1L); // Supongamos que el ID es 1 en este ejemplo
+        servicioTipoPago.borrarTipoPagoId(1L); // Supongamos que el ID es 1 en este ejemplo
     }
 }

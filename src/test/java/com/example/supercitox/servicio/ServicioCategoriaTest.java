@@ -34,24 +34,24 @@ class ServicioCategoriaTest {
     @Test
     void mostrarCategoria() {
         when(repositorioCategoria.findAll()).thenReturn(Arrays.asList(categoria));
-        assertNotNull(servicioCategoria.MostrarCategoria());
+        assertNotNull(servicioCategoria.MostrarCategorias());
     }
 
     @Test
     void insertarCategoria() {
         when(repositorioCategoria.save(any(Categoria.class))).thenReturn(categoria);
-        assertNotNull(servicioCategoria.InsertarCategoria(new Categoria()));
+        assertNotNull(servicioCategoria.agregarCategoria(new Categoria()));
     }
 
     @Test
     void actualizarCategoria() {
         when(repositorioCategoria.save(any(Categoria.class))).thenReturn(categoria);
-        assertNotNull(servicioCategoria.InsertarCategoria(new Categoria()));
+        assertNotNull(servicioCategoria.agregarCategoria(new Categoria()));
     }
 
     @Test
     void borrarCategoria() {
         doNothing().when(repositorioCategoria).deleteById(anyLong());// Llamar al método que estás probando
-        servicioCategoria.BorrarCategoria(1L);
+        servicioCategoria.borrarCategoriaId(1L);
     }
 }

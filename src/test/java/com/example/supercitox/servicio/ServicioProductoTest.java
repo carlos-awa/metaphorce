@@ -52,7 +52,7 @@ class ServicioProductoTest {
     @Test
     void borrarProductoPorId() {
         doNothing().when(repositorioProducto).deleteById(anyLong());
-        servicioProducto.borrarProductoPorId(1L);
+        servicioProducto.borrarProductoId(1L);
     }
 
     @Test

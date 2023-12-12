@@ -35,7 +35,7 @@ class ServicioUsuarioTest {
     @Test
     void mostrarUsuarios() {
         when(repositorioUsuario.findAll()).thenReturn(Arrays.asList(usuario));
-        assertNotNull(servicioUsuario.MostrarUsuarios());
+        assertNotNull(servicioUsuario.mostrarUsuarios());
     }
 
     @Test
@@ -47,12 +47,12 @@ class ServicioUsuarioTest {
     @Test
     void borrarUsuarioPorId() {
         doNothing().when(repositorioUsuario).deleteById(anyLong());// Llamar al método que estás probando
-        servicioUsuario.borrarUsuarioPorId(1L); // Supongamos que el ID es 1 en este ejemplo
+        servicioUsuario.borrarUsuarioId(1L); // Supongamos que el ID es 1 en este ejemplo
     }
 
     @Test
     void actualizarUsuario() {
         when(repositorioUsuario.save(any(Usuario.class))).thenReturn(usuario);
-        assertNotNull(servicioUsuario.ActualizarUsuario(new Usuario()));
+        assertNotNull(servicioUsuario.actualizarUsuario(new Usuario()));
     }
 }

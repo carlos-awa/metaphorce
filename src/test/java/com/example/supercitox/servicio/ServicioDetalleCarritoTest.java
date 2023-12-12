@@ -39,24 +39,24 @@ class ServicioDetalleCarritoTest {
     @Test
     void mostrarDetallesCarritos() {
         when(repositorioDetalleCarrito.findAll()).thenReturn(Arrays.asList(detalleCarrito));
-        assertNotNull(servicioDetalleCarrito.mostrarDetallesCarritos());
+        assertNotNull(servicioDetalleCarrito.mostrarDetalleCarrito());
     }
 
     @Test
     void nuevoDetalleCarrito() {
         when(repositorioDetalleCarrito.save(any(DetalleCarrito.class))).thenReturn(detalleCarrito);
-        assertNotNull(servicioDetalleCarrito.nuevoDetalleCarrito(new DetalleCarrito()));
+        assertNotNull(servicioDetalleCarrito.agregarDetalleCarrito(new DetalleCarrito()));
     }
 
     @Test
     void actualizarDetalleCarrito() {
         when(repositorioDetalleCarrito.save(any(DetalleCarrito.class))).thenReturn(detalleCarrito);
-        assertNotNull(servicioDetalleCarrito.nuevoDetalleCarrito(new DetalleCarrito()));
+        assertNotNull(servicioDetalleCarrito.agregarDetalleCarrito(new DetalleCarrito()));
     }
 
     @Test
     void borrarDetalleCarrito() {
         doNothing().when(repositorioDetalleCarrito).deleteById(anyLong());// Llamar al método que estás probando
-        servicioDetalleCarrito.BorrarDetalleCarrito(1L); // Supongamos que el ID es 1 en este ejemplo
+        servicioDetalleCarrito.borrarDetalleCarritoId(1L); // Supongamos que el ID es 1 en este ejemplo
     }
 }
