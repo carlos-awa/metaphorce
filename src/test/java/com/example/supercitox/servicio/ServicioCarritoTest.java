@@ -35,7 +35,7 @@ class ServicioCarritoTest {
     @Test
     void mostrarCarrito() {
         when(repositorioCarrito.findAll()).thenReturn(Arrays.asList(carrito));
-        assertNotNull(servicioCarrito.MostrarCarrito());
+        assertNotNull(servicioCarrito.mostrarCarritos());
     }
 
     @Test
@@ -47,7 +47,7 @@ class ServicioCarritoTest {
     @Test
     void borrarCarritoPorId() {
         doNothing().when(repositorioCarrito).deleteById(anyLong());// Llamar al método que estás probando
-        servicioCarrito.borrarCarritoPorId(1L);
+        servicioCarrito.borrarCarritoId(1L);
     }
 
     @Test
