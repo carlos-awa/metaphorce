@@ -24,11 +24,13 @@ public class ControladorUsuario {
 
     @PostMapping(path = "/agregarUsuario")
     public Usuario agregarUsuario(@RequestBody Usuario usuario) {
+
         return servicioUsuario.agregarUsuario(usuario);
     }
 
     @DeleteMapping(path= "/borrarUsuario/{id_usuario}")
     public void borrarUsuario(@PathVariable Long id_usuario) {
+
         this.servicioUsuario.borrarUsuarioPorId(id_usuario  );
     }
 
