@@ -20,12 +20,12 @@ public class Usuario {
     @Column
     private String email;
     @Column
-    private String password;
+    private String passwords;
 
     //Copia los campos relevantes del usuario actualizado al usuario existente.
     public void actualizarDetalles(Usuario usuario) {
         this.nombre=usuario.getNombre();
         this.email=usuario.getEmail();
-        this.password=usuario.getPassword();
+        this.passwords=usuario.getPasswords();
     }
 }
